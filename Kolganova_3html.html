@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello React</title>
+    <script
+            crossorigin
+            src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Benne&family=Long+Cang&display=swap" rel="stylesheet">
+
+</head>
+<center>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const userClassName = "user-info";
+        const styleObj = {
+            color:'white',
+            fontFamily:'Long Cang',
+            background: '#ffe4e1',
+            fontSize: '36px'
+        };
+
+        const user = {
+            id : 11,
+            age: 20,
+            firstName: 'ALina',
+            lastName: 'Kolganova',
+            getFullName: function(){
+                return `${this.firstName} ${this.lastName}`;
+            }
+        };
+
+        ReactDOM.render(
+            <div className={userClassName} style={styleObj}>
+                <p>Полное имя: {user.getFullName()}</p>
+                <p>Возраст: {user.age}</p>
+                <img height = '900px' src='https://zagge.ru/wp-content/uploads/2019/06/aHR0cDovL3d3dy5saXZlc2N.jpg'/>
+            </div>,
+            document.getElementById("app")
+        )
+    </script>
+</body>
+</center>
+</html>
